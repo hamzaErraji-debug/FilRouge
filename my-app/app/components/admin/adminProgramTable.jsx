@@ -84,9 +84,6 @@ export default function ProgramsTable() {
           />
         </div>
         <div className="flex gap-2 w-full sm:w-auto">
-          <button className="flex items-center gap-2 bg-gray-900 border border-white/10 px-3 py-2 text-xs font-bold uppercase text-gray-300 hover:text-white rounded-lg">
-            <FiFilter className="w-4 h-4" /> Filter
-          </button>
           <ExportButton data={programs} type="programs" />
         </div>
       </div>
@@ -170,15 +167,15 @@ export default function ProgramsTable() {
       <div className="flex justify-between items-center p-4 border-t border-white/5 bg-black/20">
         <p className="text-gray-400 text-sm">Showing: {showingText}</p>
         <div className="flex gap-2">
-          <button disabled={currentPage===1} onClick={()=>setCurrentPage(currentPage-1)} className="w-8 h-8 flex items-center justify-center rounded bg-gray-900 border border-white/10 text-gray-400 hover:text-white hover:border-white/30 disabled:opacity-50 disabled:cursor-not-allowed">
+          <button disabled={currentPage===1} onClick={()=>setCurrentPage(currentPage-1)} className=" cursor-pointer w-8 h-8 flex items-center justify-center rounded bg-gray-900 border border-white/10 text-gray-400 hover:text-white hover:border-white/30 disabled:opacity-50 disabled:cursor-not-allowed">
             <FiChevronLeft className="w-4 h-4" />
           </button>
           {pages.map(page => (
-            <button key={page} onClick={()=>setCurrentPage(page)} className={`w-8 h-8 flex items-center justify-center rounded text-xs font-bold transition-colors ${currentPage===page?'bg-emerald-500 text-black':'bg-gray-900 border border-white/10 text-gray-400 hover:text-white hover:border-white/30'}`}>
+            <button key={page} onClick={()=>setCurrentPage(page)} className={`cursor-pointer w-8 h-8 flex items-center justify-center rounded text-xs font-bold transition-colors ${currentPage===page?'bg-emerald-500 text-black':'bg-gray-900 border border-white/10 text-gray-400 hover:text-white hover:border-white/30'}`}>
               {page}
             </button>
           ))}
-          <button disabled={currentPage===totalPages} onClick={()=>setCurrentPage(currentPage+1)} className="w-8 h-8 flex items-center justify-center rounded bg-gray-900 border border-white/10 text-gray-400 hover:text-white hover:border-white/30 disabled:opacity-50 disabled:cursor-not-allowed">
+          <button disabled={currentPage===totalPages} onClick={()=>setCurrentPage(currentPage+1)} className="cursor-pointer w-8 h-8 flex items-center justify-center rounded bg-gray-900 border border-white/10 text-gray-400 hover:text-white hover:border-white/30 disabled:opacity-50 disabled:cursor-not-allowed">
             <FiChevronRight className="w-4 h-4" />
           </button>
         </div>
