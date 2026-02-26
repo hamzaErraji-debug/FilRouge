@@ -118,8 +118,8 @@ export default function ProgramDetails() {
     generateAI();
   }, [program, aiContent, id]);
 
-  if (loading || loadingAI) return <p className="text-white p-6">Loading...</p>;
-  if (!program) return <p className="text-white p-6">Program not found</p>;
+  if (loading || loadingAI) return <p className="text-white p-6 text-center">Loading...</p>;
+  if (!program) return <p className="text-white p-6 text-center">Program not found</p>;
   if (!aiContent) return null;
 
   return (

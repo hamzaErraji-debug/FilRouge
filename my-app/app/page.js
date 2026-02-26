@@ -52,8 +52,10 @@ const Home = () => {
                 >
                   Shop Now
                 </button>
-                <button className="bg-transparent cursor-pointer border-2 border-white hover:bg-white hover:text-black text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 uppercase tracking-wide">
-                  View Plans
+                <button className="bg-transparent cursor-pointer border-2 border-white hover:bg-white hover:text-black text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 uppercase tracking-wide"
+                  onClick={()=>router.push('/about')} 
+                >
+                  View Us
                 </button>
               </div>
             </div>
