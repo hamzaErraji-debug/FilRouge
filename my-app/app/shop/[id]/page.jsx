@@ -60,7 +60,7 @@ export default function ProductDetails() {
         {/* BACK */}
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-gray-400 hover:text-white mb-6"
+          className="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-white mb-6"
         >
           <FiArrowLeft />
           Back

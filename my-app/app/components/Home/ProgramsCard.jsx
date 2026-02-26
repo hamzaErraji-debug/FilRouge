@@ -24,7 +24,7 @@ export const ProgramsSection = () => {
         </h2>
         <a
           className="text-sm font-bold text-green-400 uppercase tracking-wide hover:underline"
-          href="#"
+          href="/programs"
         >
           View All Programs
         </a>
