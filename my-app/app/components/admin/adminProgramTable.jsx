@@ -63,8 +63,8 @@ export default function ProgramsTable() {
       <div className="flex justify-between items-center border-b border-white/5 p-4">
         <h2 className="text-white font-bold uppercase">Programs</h2>
         <button
-          onClick={() => router.push("/admin/addprogram")}
-          className="flex items-center gap-2 bg-green-500 px-4 py-2 rounded-lg text-black font-bold hover:bg-green-600"
+          onClick={() => router.push("/admin/dashboard/addprogram")}
+          className="flex items-center cursor-pointer gap-2 bg-green-500 px-4 py-2 rounded-lg text-black font-bold hover:bg-green-600"
         >
           <FiPlus className="w-4 h-4" />
           Add Program
@@ -136,14 +136,14 @@ export default function ProgramsTable() {
                       {program.status}
                     </span>
                   </td>
-                  <td className="p-4 text-right flex justify-end gap-1">
-                    <button onClick={() => toggleActivation(program)} className={`p-2 rounded-lg transition-colors ${program.status==='active'?'text-emerald-500 bg-emerald-500/10':'text-gray-400 hover:text-yellow-400 hover:bg-yellow-400/10'}`}>
+                  <td className="p-4  text-right flex justify-end gap-1">
+                    <button onClick={() => toggleActivation(program)} className={`cursor-pointer p-2 rounded-lg transition-colors ${program.status==='active'?'text-emerald-500 bg-emerald-500/10':'text-gray-400 hover:text-yellow-400 hover:bg-yellow-400/10'}`}>
                       <FiStar className="w-4 h-4" />
                     </button>
-                    <button onClick={()=>router.push(`/admin/dashboard/programs/edit/${program.id}`)} className="p-2 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg">
+                    <button onClick={()=>router.push(`/admin/dashboard/programs/edit/${program.id}`)} className=" cursor-pointer p-2 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg">
                       <FiEdit className="w-4 h-4" />
                     </button>
-                    <button onClick={()=>{setSelectedProgram(program); setShowDeleteModal(true)}} className="p-2 text-red-400 hover:bg-red-400/10 rounded-lg">
+                    <button onClick={()=>{setSelectedProgram(program); setShowDeleteModal(true)}} className=" cursor-pointer p-2 text-red-400 hover:bg-red-400/10 rounded-lg">
                       <FiTrash2 className="w-4 h-4" />
                     </button>
 

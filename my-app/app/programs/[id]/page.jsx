@@ -1,16 +1,18 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPrograms } from '@/app/lib/Redux/programSlice';
 import { FaFire, FaHeart, FaDumbbell, FaBrain, FaCheckCircle } from 'react-icons/fa';
 import { MdTimer } from 'react-icons/md';
 import axios from 'axios';
+import { addToCart } from '@/app/lib/Redux/cartProgramSlice';
 
 export default function ProgramDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const [aiContent, setAiContent] = useState(null);
   const [loadingAI, setLoadingAI] = useState(false);
@@ -227,7 +229,15 @@ export default function ProgramDetails() {
                 </div>
               </div>
 
-              <button className="w-full bg-green-500 text-black font-black uppercase tracking-wide py-4 rounded-xl hover:bg-green-400 transition-all shadow-[0_0_20px_rgba(19,236,91,0.2)] mb-3 flex items-center justify-center gap-2">
+              <button className="w-full cursor-pointer bg-green-500 text-black font-black uppercase tracking-wide py-4 rounded-xl hover:bg-green-400 transition-all shadow-[0_0_20px_rgba(19,236,91,0.2)] mb-3 flex items-center justify-center gap-2"
+                onClick={()=>
+                  {
+                    dispatch(addToCart(program));
+                    router.push('/checkout');
+                    
+                  }
+                  }
+              >
                 Buy Program
               </button>
             </div>

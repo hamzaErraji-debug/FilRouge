@@ -62,7 +62,7 @@ export default function ProductTable() {
         </div>
         <button
           onClick={() => router.push("/admin/dashboard/products/add")}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-black font-bold hover:bg-green-600 transition"
+          className="flex items-center cursor-pointer gap-2 px-4 py-2 rounded-lg bg-green-500 text-black font-bold hover:bg-green-600 transition"
         >
           <FiPlus className="w-4 h-4" /> Add Product
         </button>
