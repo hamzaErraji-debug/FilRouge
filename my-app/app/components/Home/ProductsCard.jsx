@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
   const discountPercent = product.discount_price
     ? Math.round(((product.price - product.discount_price) / product.price) * 100)
     : null;
-
+  
   return (
     <div className="w-75 group flex flex-col gap-3 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5 relative">
       
